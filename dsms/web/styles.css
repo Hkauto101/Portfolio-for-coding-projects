@@ -1,0 +1,268 @@
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0a192f;
+    color: white;
+}
+
+/* Header */
+header {
+    background-color: #172a45;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2, h3 {
+    margin: 0;
+    font-style: italic;
+}
+
+/* Main content */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    background-color: #172a45;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+nav button {
+    background-color: #64ffda;
+    color: #0a192f;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+nav button:hover {
+    background-color: #a8ffe3;
+}
+
+/* Sections */
+.section {
+    background-color: #172a45;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #64ffda;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #2d3748;
+    background-color: #1d2d50;
+    color: white;
+}
+
+button {
+    background-color: #64ffda;
+    color: #0a192f;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #a8ffe3;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th, td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #2d3748;
+}
+
+th {
+    background-color: #0e2a47;
+    color: #64ffda;
+}
+
+tr:hover {
+    background-color: #213b5c;
+}
+
+/* Dialog styles */
+.dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.dialog {
+    background-color: #172a45;
+    border-radius: 8px;
+    padding: 2rem;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dialog-header {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.dialog-footer {
+    margin-top: 1.5rem;
+    text-align: right;
+}
+
+/* Sale badge */
+.sale-badge {
+    background-color: #f06060;
+    color: white;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.tab {
+    padding: 10px 20px;
+    background-color: #213b5c;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: white;
+    font-weight: bold;
+}
+
+.tab.active {
+    background-color: #64ffda;
+    color: #0a192f;
+}
+
+/* Specific pages */
+#inventory-page, #sales-page, #finance-page, #promotions-page {
+    display: none;
+}
+
+#inventory-page.active, #sales-page.active, #finance-page.active, #promotions-page.active {
+    display: block;
+}
+
+/* Update screens */
+.update-screen {
+    background-color: #0a192f;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.update-screen h3 {
+    color: #64ffda;
+    margin-bottom: 15px;
+}
+
+.update-forms {
+    display: flex;
+    gap: 20px;
+}
+
+.update-form {
+    flex: 1;
+    background-color: #2a436e;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.check-button {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.check-button button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.check-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    background-color: #0a192f;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #64ffda;
+}
+
+/* Promotion dialog */
+.promotion-dialog {
+    max-width: 600px;
+}
+
+.apply-sale-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.apply-sale-btn .sale-badge {
+    width: 40px;
+    height: 40px;
+    font-size: 0.8rem;
+    margin-right: 10px;
+}

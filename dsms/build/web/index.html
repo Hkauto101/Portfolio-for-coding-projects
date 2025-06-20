@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department Store Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Department Store Management System</h1>
+    </header>
+    
+    <nav>
+        <button id="inventory-tab">Inventory</button>
+        <button id="sales-tab">Sales</button>
+        <button id="finance-tab">Finance</button>
+        <button id="promotions-tab">Promotions</button>
+    </nav>
+    
+    <main>
+        <!-- Inventory Page -->
+        <div id="inventory-page" class="active">
+            <div class="section">
+                <h2>Inventory Management</h2>
+                <div class="actions">
+                    <button id="add-item-btn">Add New Item</button>
+                    <button id="view-low-stock-btn">View Low Stock</button>
+                </div>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Item Name</th>
+                            <th>Company</th>
+                            <th>Department</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inventory-table-body">
+                        <tr>
+                            <td>1</td>
+                            <td>Laptop</td>
+                            <td>TechCorp</td>
+                            <td>Electronics</td>
+                            <td>10</td>
+                            <td>$999.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>T-shirt</td>
+                            <td>FashionInc</td>
+                            <td>Clothing</td>
+                            <td>50</td>
+                            <td>$19.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Apple</td>
+                            <td>FreshFarms</td>
+                            <td>Grocery</td>
+                            <td>100</td>
+                            <td>$1.49</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Update Inventory Screen (similar to the image) -->
+            <div class="update-screen">
+                <h2>Update Inventory</h2>
+                
+                <div class="update-forms">
+                    <div class="update-form">
+                        <h3>Update Batch Details</h3>
+                        
+                        <div class="form-group">
+                            <label for="batch-id">Batch ID:</label>
+                            <div class="check-button">
+                                <input type="text" id="batch-id">
+                                <button>
+                                    <span class="check-icon">✓</span> 
+                                    Check
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="vendor-id">Vendor ID:</label>
+                            <input type="text" id="vendor-id">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="category">Category:</label>
+                            <input type="text" id="category">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="boxes">Number of boxes:</label>
+                            <input type="number" id="boxes" value="0" min="0">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="items-per-box">Items per box:</label>
+                            <input type="number" id="items-per-box" value="0" min="0">
+                        </div>
+                        
+                        <button class="update-batch-btn">
+                            <span class="check-icon">↻</span> 
+                            Update
+                        </button>
+                    </div>
+                    
+                    <div class="update-form">
+                        <h3>Update Item Details</h3>
+                        
+                        <div class="form-group">
+                            <label for="item-sku">Item SKU:</label>
+                            <div class="check-button">
+                                <input type="text" id="item-sku">
+                                <button>
+                                    <span class="check-icon">✓</span> 
+                                    Check
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="item-name">Item name:</label>
+                            <input type="text" id="item-name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="price">Price:</label>
+                            <input type="number" id="price" step="0.01" min="0">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="item-department">Department:</label>
+                            <select id="item-department">
+                                <option>Grocery</option>
+                                <option>Electronics</option>
+                                <option>Clothing</option>
+                                <option>Home</option>
+                                <option>Beauty</option>
+                            </select>
+                        </div>
+                        
+                        <button class="update-item-btn">
+                            <span class="check-icon">↻</span> 
+                            Update
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sales Page -->
+        <div id="sales-page">
+            <div class="section">
+                <h2>Sales Management</h2>
+                <div class="actions">
+                    <button id="new-sale-btn">Record New Sale</button>
+                    <button id="view-daily-sales-btn">View Daily Sales</button>
+                </div>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Date</th>
+                            <th>Item</th>
+                            <th>Quantity</th>
+                            <th>Price/Unit</th>
+                            <th>Total</th>
+                            <th>Payment</th>
+                        </tr>
+                    </thead>
+                    <tbody id="sales-table-body">
+                        <!-- Sales data will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Finance Page -->
+        <div id="finance-page">
+            <div class="section">
+                <h2>Financial Management</h2>
+                <div class="actions">
+                    <button id="record-expense-btn">Record Expense</button>
+                    <button id="record-income-btn">Record Income</button>
+                    <button id="view-report-btn">View Financial Report</button>
+                </div>
+                
+                <div id="financial-summary">
+                    <h3>Monthly Summary</h3>
+                    <div id="monthly-chart">
+                        <!-- Chart will be rendered here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Promotions Page -->
+        <div id="promotions-page">
+            <div class="section">
+                <h2>Promotions Management</h2>
+                <div class="actions">
+                    <button id="new-promotion-btn">Create New Promotion</button>
+                    <button id="view-active-promotions-btn">View Active Promotions</button>
+                </div>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Discount %</th>
+                            <th>Department</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="promotions-table-body">
+                        <!-- Promotions data will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Promotion Dialog (similar to the image) -->
+            <div class="dialog promotion-dialog" style="display: none;">
+                <div class="dialog-header">
+                    <h2>Apply Promotion</h2>
+                    <div class="sale-badge">Sale</div>
+                </div>
+                
+                <div class="dialog-content">
+                    <div class="form-group">
+                        <label for="sale-name">Sale Name</label>
+                        <input type="text" id="sale-name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="starting-date">Starting Date</label>
+                        <input type="date" id="starting-date">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="ending-date">Ending Date</label>
+                        <input type="date" id="ending-date">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="discount-percent">Discount %</label>
+                        <input type="number" id="discount-percent" min="0" max="100">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="promo-department">Department</label>
+                        <select id="promo-department">
+                            <option>Grocery</option>
+                            <option>Electronics</option>
+                            <option>Clothing</option>
+                            <option>Home</option>
+                            <option>Beauty</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="dialog-footer">
+                    <button class="apply-sale-btn">
+                        <span class="sale-badge">Sale</span>
+                        Apply Sale
+                    </button>
+                    <button class="cancel-btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="app.js"></script>
+</body>
+</html>
